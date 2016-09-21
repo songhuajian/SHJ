@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.content{
+			width: 400px;
+			height: 400px;
+			margin: 100px auto;
+			/* border: 1px solid red; */
+			position: relative;
+			transform-style: preserve-3d;
+			animation-name: change;
+			animation-duration: 3s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+		.content div{
+			width: 400px;
+			height: 400px;
+			text-align: center;
+			line-height: 400px;
+			font-size: 50px;
+			color: #fff;
+			opacity: 0.7;
+			position: absolute;
+			font-family:"方正舒体";
+			border-radius: 20%;
+			/* box-shadow:0 0 40px black; */
+		}
+		.d1{
+			background-image: url(pic/1.jpg);
+			-webkit-transform: translateZ(200px);
+			   -moz-transform: translateZ(200px);
+			    -ms-transform: translateZ(200px);
+			     -o-transform: translateZ(200px);
+			        transform: translateZ(200px);
+		}
+		.d2{
+			background-image: url(pic/2.jpg);
+			-webkit-transform: translateX(-200px) rotateY(-90deg);
+			   -moz-transform: translateX(-200px) rotateY(-90deg);
+			    -ms-transform: translateX(-200px) rotateY(-90deg);
+			     -o-transform: translateX(-200px) rotateY(-90deg);
+			        transform: translateX(-200px) rotateY(-90deg);
+		}
+		.d3{
+			background-image: url(pic/3.jpg);
+			-webkit-transform: translateZ(-200px) rotateY(180deg);
+			   -moz-transform: translateZ(-200px) rotateY(180deg);
+			    -ms-transform: translateZ(-200px) rotateY(180deg);
+			     -o-transform: translateZ(-200px) rotateY(180deg);
+			        transform: translateZ(-200px) rotateY(180deg);
+		}
+		.d4{
+			background-image: url(pic/4.jpg);
+			-webkit-transform: translateX(200px) rotateY(90deg);
+			   -moz-transform: translateX(200px) rotateY(90deg);
+			    -ms-transform: translateX(200px) rotateY(90deg);
+			     -o-transform: translateX(200px) rotateY(90deg);
+			        transform: translateX(200px) rotateY(90deg);
+		}
+		.d5{
+			background-image: url(pic/5.jpg);
+			-webkit-transform: translateY(200px) rotateX(-90deg);
+			   -moz-transform: translateY(200px) rotateX(-90deg);
+			    -ms-transform: translateY(200px) rotateX(-90deg);
+			     -o-transform: translateY(200px) rotateX(-90deg);
+			        transform: translateY(200px) rotateX(-90deg);
+		}
+		.d6{
+			background-image: url(pic/6.jpg);
+			-webkit-transform: translateY(-200px) rotateX(90deg);
+			   -moz-transform: translateY(-200px) rotateX(90deg);
+			    -ms-transform: translateY(-200px) rotateX(90deg);
+			     -o-transform: translateY(-200px) rotateX(90deg);
+			        transform: translateY(-200px) rotateX(90deg);
+		}
+		@keyframes change{
+			0%{
+			-webkit-transform: rotateX(0deg) rotateY(0deg);
+			   -moz-transform: rotateX(0deg) rotateY(0deg);
+			    -ms-transform: rotateX(0deg) rotateY(0deg);
+			     -o-transform: rotateX(0deg) rotateY(0deg);
+			        transform: rotateX(0deg) rotateY(0deg);
+			}
+			100%{
+			-webkit-transform: rotateX(360deg) rotateY(360deg);
+			   -moz-transform: rotateX(360deg) rotateY(360deg);
+			    -ms-transform: rotateX(360deg) rotateY(360deg);
+			     -o-transform: rotateX(360deg) rotateY(360deg);
+			        transform: rotateX(360deg) rotateY(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div class="d1">第一面</div>
+		<div class="d2">第二面</div>
+		<div class="d3">第三面</div>
+		<div class="d4">第四面</div>
+		<div class="d5">第五面</div>
+		<div class="d6">第六面</div>
+	</div>
+	<script type="text/javascript">
+			var d1 = document.querySelector('.content');
+		var state = true;
+		d1.onclick = function  () {
+			if(state){
+				d1.style.animationPlayState = 'paused';
+				state = false;
+			}else{
+				d1.style.animationPlayState = 'running';	
+				state = true;
+			}
+			  
+			 
+		}
+
+	</script>
+</body>
+</html>
